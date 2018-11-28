@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x:hidden;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #fa4242;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.menu-hamburguer {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+}
+
+.traco {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 10px;
+  margin: 3.75px 0;
+  transition: 0.5s;
+}
+
+.traco-1, .traco-3 {
+  transform-origin: center right;
+}
+
+.menu-hamburguer.ativo .traco-1 {
+  transform: rotateZ(-45deg);
+}
+
+.menu-hamburguer.ativo .traco-2 {
+  opacity: 0;
+}
+
+.menu-hamburguer.ativo .traco-3 {
+  transform: rotateZ(45deg);
+}
+
+.filtros {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.filtros.mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  left: 20vw;
+  right: 0;
+  background-color: #fa4242;
+  z-index: 1;
+  transform: translateX(150%);
+  transition: 0.5s;
+}
+
+.filtros.mobile.ativo {
+  transform: translateX(0);
+}
+
+.filtros p {
+  margin: 10px;
+}
+
+.banner {
+  height: 30vw;
+  background-image: url(img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cartao {
+  margin: 15px;
+  width: 10%;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.cartao img {
+  width: 100%;
+}
+
+@media(min-width: 576px) {
+  header {
+    justify-content: space-between;
+  }
+
+  .menu-hamburguer {
+    display: none;
+  }
+
+  .filtros {
+    display: flex;
+  }
+
+  .filtros.mobile {
+    display: none;
+  }
+}
